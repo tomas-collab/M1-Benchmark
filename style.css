@@ -8,5 +8,13 @@
 }
 
 .question{
+    border:1px solid #0275d8;
+border-radius:5px;
+padding-top:10px;
+margin-bottom:7px;
+margin-left:0px;
+background-color:#FFFFFF;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
     
 }

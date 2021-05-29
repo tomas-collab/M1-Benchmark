@@ -1,4 +1,9 @@
+
 document.addEventListener('DOMContentLoaded', ()=>{
+    
+    let shuffledQuestion, currentQuestionIndex
+    const questionElement = document.getElementById('question')
+    const answerElements =  document.getElementById('answer')
     
     const quiz = document.getElementById('question-container')
 
@@ -103,41 +108,46 @@ document.addEventListener('DOMContentLoaded', ()=>{
       ];
 
 
+    function show(){
+        let shuffledQuestion
+        shuffledQuestion=questions.sort(()=> Math.random() - .5)
+        currentQuestionIndex = 0
+        displayQuestion()
 
+    }
 
       
+      
 
+      function displayQuestion(question){
+          showQuestion(shuffledQuestion[currentQuestionIndex])
 
-      function displayQuestion(){
-          
-       
-          for(let i = 0;i<=questions.length;i++){
-              let ask = document.createElement('div')
-              ask.innerHTML = questions[i].question
-              ask.classList.add('question')
-              quiz.appendChild(ask)
-              
-          
+      }
 
-          }
-        
-            
-          
+      function showQuestion(questions){
+          questionElement.innerText = questions.question
+
       }
 
 
 
-    //   function multipleChoices(){
-    //     for(let i = 0;i<=questions.length;i++){
-    //         let choices = document.getElementById('choice')
-    //          choices = document.createElement('div')
-    //           choices.innerHTML = questions[i].correct_answer,incorrect_answers
-    //           choices.classList.add('choices')
-    //         ask.appendChild(ask)
+        // let ask = document.createElement('div')
+          
+       
+        //   for(let i = 0;i<=questions.length;i++){
+              
+              
+              
+        //       ask.innerHTML =  `${questions[i].question}`
+        //       ask.classList.add('question')
+        //       quiz.appendChild(ask)
+              
+          
 
-    //     }
-
+    //       }
+       
     //   }
+    
 
       displayQuestion()
 
